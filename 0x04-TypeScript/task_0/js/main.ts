@@ -1,34 +1,48 @@
 interface Student {
-  firstName: string;
-  lastName: string;
-  age: number;
-  location: string;
+	firstName: string;
+	lastName: string;
+	age: number;
+	location: string;
 }
 
 const student1: Student = {
-  firstName: "string",
-  lastName: "string",
-  age: 10,
-  location: "string",
+	firstName: "Zeliq",
+	lastName: "Shannon",
+	age: 40,
+	location: "Nakuru"
 };
 
 const student2: Student = {
-  firstName: "string",
-  lastName: "string",
-  age: 20,
-  location: "string",
+        firstName: "John",
+        lastName: "Doe",
+        age: 37,
+        location: "Nairobi"
 };
 
-const studentsList = [student1, student2];
+const studentsList: Student[] = [student1, student2];
 
-const table = document.getElementById("studentTable") as HTMLTableElement;
+const table = document.createElement('table');
+const tbody = document.createElement('tbody');
 
-// Create a new row for each student and append it to the table
-studentsList.forEach((student) => {
-  const row = table.insertRow();
-  const firstNameCell = row.insertCell(0);
-  const locationCell = row.insertCell(1);
+table.style.background = "pink";
+table.appendChild(tbody);
 
-  firstNameCell.innerHTML = student.firstName;
-  locationCell.innerHTML = student.location;
+studentsList.forEach((student: Student): void => {
+  const row = document.createElement('tr');
+  const nameCell = document.createElement('td');
+  const locationCell = document.createElement('td');
+
+  nameCell.textContent = student.firstName;
+  locationCell.textContent = student.location;
+
+  nameCell.style.border = "1px solid pink";
+  locationCell.style.border = "1px solid pink";
+  nameCell.style.padding = "5px";
+  locationCell.style.padding = "5px";
+
+  row.appendChild(nameCell);
+  row.appendChild(locationCell);
+  tbody.appendChild(row);
 });
+
+document.body.appendChild(table);
