@@ -3,8 +3,8 @@
  * @param {*} param
  */
 
-function displayMessage(param) {
-  console.log(param);
+function displayMessage(params) {
+  console.log(params);
 }
 
 module.exports = displayMessage;
