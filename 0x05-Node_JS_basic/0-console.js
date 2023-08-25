@@ -1,10 +1,9 @@
 /**
- * Executing basic javascript with Node JS
- * @param {*} param
+ * Displays a message on the STDOUT.
+ * @param {String} msg The message to display.
  */
-
-function displayMessage(params) {
-  console.log(params);
-}
+const displayMessage = (msg) => {
+  console.log(msg);
+};
 
 module.exports = displayMessage;
